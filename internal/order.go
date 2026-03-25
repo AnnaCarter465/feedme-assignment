@@ -15,5 +15,8 @@ const (
 type Order struct {
 	ID     int
 	Type   OrderType
-	Status OrderStatus
+	status OrderStatus
 }
+
+// Status returns the current order status.
+func (o *Order) Status() OrderStatus { return o.status }

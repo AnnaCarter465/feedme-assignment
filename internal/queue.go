@@ -40,15 +40,29 @@ func insertSorted(orders []*Order, o *Order) []*Order {
 func (q *Queue) Pop() *Order {
 	if len(q.vip) > 0 {
 		o := q.vip[0]
+		q.vip[0] = nil // avoid holding reference to popped element
 		q.vip = q.vip[1:]
 		return o
 	}
 	if len(q.normal) > 0 {
 		o := q.normal[0]
+		q.normal[0] = nil
 		q.normal = q.normal[1:]
 		return o
 	}
 	return nil
+}
+
+// PeekIDs returns the IDs of all pending orders in processing order.
+func (q *Queue) PeekIDs() []int {
+	ids := make([]int, 0, q.Len())
+	for _, o := range q.vip {
+		ids = append(ids, o.ID)
+	}
+	for _, o := range q.normal {
+		ids = append(ids, o.ID)
+	}
+	return ids
 }
 
 // Len returns the total number of pending orders.

@@ -1,26 +1,26 @@
-[19:58:10] === McDonald's Order Controller — Demo ===
-[19:58:10] New NORMAL Order #1 → PENDING
-[19:58:10] New VIP Order #2 → PENDING
-[19:58:10] New NORMAL Order #3 → PENDING
-[19:58:10] Bot #1 created → IDLE
-[19:58:10] Bot #1 picks up VIP Order #2 → PROCESSING
-[19:58:10] Bot #2 created → IDLE
-[19:58:10] Bot #2 picks up NORMAL Order #1 → PROCESSING
-[19:58:20] Bot #1 completed VIP Order #2 → COMPLETE
-[19:58:20] Bot #1 picks up NORMAL Order #3 → PROCESSING
-[19:58:20] Bot #2 completed NORMAL Order #1 → COMPLETE
-[19:58:20] Bot #2 → IDLE (no pending orders)
-[19:58:22] Status: bots=2 (processing=1, idle=1), pending=0
-[19:58:22] New VIP Order #4 → PENDING
-[19:58:22] Bot #2 picks up VIP Order #4 → PROCESSING
-[19:58:25] Bot #2 removed → Order #4 returned to PENDING
-[19:58:30] Bot #1 completed NORMAL Order #3 → COMPLETE
-[19:58:30] Bot #1 picks up VIP Order #4 → PROCESSING
-[19:58:40] Bot #1 completed VIP Order #4 → COMPLETE
-[19:58:40] Bot #1 → IDLE (no pending orders)
-[19:58:42] Status: bots=1 (processing=0, idle=1), pending=0
-[19:58:42] Bot #1 removed → was IDLE
-[19:58:42] === Final Status ===
-[19:58:42] Total Orders Completed: 4 (VIP: 2, Normal: 2)
-[19:58:42] Active Bots: 0
-[19:58:42] Pending Orders: 0
+[16:24:49] === McDonald's Order Controller — Demo ===
+[16:24:49] New NORMAL Order #1 → PENDING
+[16:24:49] New VIP Order #2 → PENDING
+[16:24:49] New NORMAL Order #3 → PENDING
+[16:24:49] Bot #1 created → IDLE
+[16:24:49] Bot #1 picks up VIP Order #2 → PROCESSING
+[16:24:49] Bot #2 created → IDLE
+[16:24:49] Bot #2 picks up NORMAL Order #1 → PROCESSING
+[16:24:59] Bot #2 completed NORMAL Order #1 → COMPLETE
+[16:24:59] Bot #2 picks up NORMAL Order #3 → PROCESSING
+[16:24:59] Bot #1 completed VIP Order #2 → COMPLETE
+[16:24:59] Bot #1 → IDLE (no pending orders)
+[16:25:01] Status: bots=2 (processing=1, idle=1), pending=0
+[16:25:01] New VIP Order #4 → PENDING
+[16:25:01] Bot #1 picks up VIP Order #4 → PROCESSING
+[16:25:04] Bot #2 removed → Order #3 returned to PENDING
+[16:25:11] Bot #1 completed VIP Order #4 → COMPLETE
+[16:25:11] Bot #1 picks up NORMAL Order #3 → PROCESSING
+[16:25:21] Bot #1 completed NORMAL Order #3 → COMPLETE
+[16:25:21] Bot #1 → IDLE (no pending orders)
+[16:25:21] Status: bots=1 (processing=0, idle=1), pending=0
+[16:25:21] Bot #1 removed → was IDLE
+[16:25:21] === Final Status ===
+[16:25:21] Total Orders Completed: 4 (VIP: 2, Normal: 2)
+[16:25:21] Active Bots: 0
+[16:25:21] Pending Orders: 0

@@ -46,6 +46,8 @@ func runInteractive(log internal.Logger) {
 		case "5":
 			c.Status()
 		case "6":
+			fmt.Println("Waiting for processing orders to complete...")
+			c.Wait()
 			c.FinalStatus()
 			fmt.Println("Goodbye!")
 			return

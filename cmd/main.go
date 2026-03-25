@@ -75,5 +75,6 @@ func runDemo() {
 	// --- Step 5: remove Bot#1 (now IDLE) ---
 	c.RemoveBot()
 
+	c.Wait()
 	c.FinalStatus()
 }

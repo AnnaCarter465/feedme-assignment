@@ -11,7 +11,10 @@ const (
 
 type Bot struct {
 	ID           int
-	Status       BotStatus
-	CurrentOrder *Order
+	status       BotStatus
+	currentOrder *Order
 	cancel       context.CancelFunc
 }
+
+// Status returns the current bot status.
+func (b *Bot) Status() BotStatus { return b.status }
