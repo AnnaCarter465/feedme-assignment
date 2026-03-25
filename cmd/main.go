@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"io"
 	"os"
@@ -9,7 +10,26 @@ import (
 	"feedme-assignment/internal"
 )
 
+func newLogger(w io.Writer) internal.Logger {
+	return func(format string, args ...any) {
+		ts := time.Now().Format("15:04:05")
+		fmt.Fprintf(w, "[%s] "+format+"\n", append([]any{ts}, args...)...)
+	}
+}
+
 func main() {
+	interactive := flag.Bool("interactive", false, "run in interactive CLI mode")
+	flag.Parse()
+
+	if *interactive {
+		runInteractive(newLogger(os.Stdout))
+	} else {
+		runDemo()
+	}
+}
+
+// runDemo runs the original automated demo and writes output to result.txt.
+func runDemo() {
 	f, err := os.Create("scripts/result.txt")
 	if err != nil {
 		fmt.Fprintln(os.Stderr, "cannot create result.txt:", err)
@@ -17,13 +37,7 @@ func main() {
 	}
 	defer f.Close()
 
-	out := io.MultiWriter(os.Stdout, f)
-
-	log := func(format string, args ...any) {
-		ts := time.Now().Format("15:04:05")
-		fmt.Fprintf(out, "[%s] "+format+"\n", append([]any{ts}, args...)...)
-	}
-
+	log := newLogger(io.MultiWriter(os.Stdout, f))
 	c := internal.NewController(log)
 
 	log("=== McDonald's Order Controller — Demo ===")
