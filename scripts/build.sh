@@ -3,5 +3,5 @@
 set -e
 
 echo "Building CLI application..."
-go build -o order-controller ./cmd/main.go
+go build -o order-controller ./cmd/
 echo "Build completed"
